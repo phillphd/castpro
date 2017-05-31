@@ -1,0 +1,126 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+<section class="bg--image vp-xs-top-4 vp-xs-bottom-6"  style="background-image: url('{{ theme.link }}/assets/src/img/podcast.jpg');">
+	<div class="gradient"></div>
+	<div class="container">
+		<div class="row vp-xs-top-12 vp-xs-bottom-12 text-center">
+			<div class="col-md-12">
+				<h1 class="text-">Focus on your message.<br />We'll take care of everything else.</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita minima nihil itaque deleniti, eius assumenda maiores esse, fuga! Earum blanditiis reiciendis recusandae quae consequuntur expedita quia quos architecto optio molestias.</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="vp-xs-top-2 vp-xs-bottom-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<h4>Choose the plan that fits you</h4>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section>
+	<div class="pricing-cards">
+		<div class="pricing-card">
+			<div class="pricing-card__header">
+				<h5>Hobbyist</h5>
+				<div class="price">
+					<span class="currency">$</span>
+					<span class="value">375</span>
+					<span class="duration">/mo</span>
+				</div>
+			</div>
+			<div class="pricing-card__list">
+				<ul>
+					<li>Up to 5 Episodes Per Month</li>
+					<li><strong>Audio Editing</strong><br />(Up to 1 hour RAW audio per episode)</li>
+					<li>Intro and Outro</li>
+					<li>Pre-Roll, Mid-Roll and Post-Roll Ads</li>
+					<li>ID3 Tagging</li>
+					<li>Audio Transcriptions with 99% Accuracy</li>
+					<li>Episode Show Notes</li>
+					<li>48hr Turn-Around</li>
+				</ul>
+			</div>
+			<div class="pricing-card__cta">
+				<a href="#!" class="btn">Select</a>
+			</div>
+		</div>
+		<div class="pricing-card">
+			<div class="pricing-card__header">
+				<h5>Part-time</h5>
+				<div class="price">
+					<span class="currency">$</span>
+					<span class="value">1,050</span>
+					<span class="duration">/mo</span>
+				</div>
+			</div>
+			<div class="pricing-card__list">
+				<ul>
+					<li>Up to 15 Episodes Per Month</li>
+					<li><strong>Audio Editing</strong><br />(Up to 1 hour RAW audio per episode)</li>
+					<li>Intro and Outro</li>
+					<li>Pre-Roll, Mid-Roll and Post-Roll Ads</li>
+					<li>ID3 Tagging</li>
+					<li>Audio Transcriptions with 99% Accuracy</li>
+					<li>Episode Show Notes</li>
+					<li>48hr Turn-Around</li>
+				</ul>
+			</div>
+			<div class="pricing-card__cta">
+				<a href="#!" class="btn">Select</a>
+			</div>
+		</div>
+		<div class="pricing-card">
+			<div class="pricing-card__header">
+				<h5>Professional</h5>
+				<div class="price">
+					<span class="currency">$</span>
+					<span class="value">1,950</span>
+					<span class="duration">/mo</span>
+				</div>
+			</div>
+			<div class="pricing-card__list">
+				<ul>
+					<li>Up to 31 Episodes Per Month</li>
+					<li><strong>Audio Editing</strong><br />(Up to 1 hour RAW audio per episode)</li>
+					<li>Intro and Outro</li>
+					<li>Pre-Roll, Mid-Roll and Post-Roll Ads</li>
+					<li>ID3 Tagging</li>
+					<li>Audio Transcriptions with 99% Accuracy</li>
+					<li>Episode Show Notes</li>
+					<li>48hr Turn-Around</li>
+				</ul>
+			</div>
+			<div class="pricing-card__cta">
+				<a href="#!" class="btn">Select</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="bg--dark vp-xs-top-6 vp-xs-bottom-5">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 vm-xs-bottom-2">
+				<h3>Looking for something else?</h3>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				{{ fn('do_shortcode', '[ninja_form id=2]') }}
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}

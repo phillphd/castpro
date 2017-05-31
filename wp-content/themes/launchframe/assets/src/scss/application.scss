@@ -1,0 +1,383 @@
+@import "custom_variables";
+@import "../../vendor/bootstrap/scss/bootstrap";
+@import "utilities";
+@import "grid_extensions";
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $font-family-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: #4D4D4D;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #FFF;
+    text-transform: none;
+}
+
+input,
+textarea {
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    color: $white;
+    text-transform: uppercase;
+    background-color: #4D4D4D;
+    border: 1px solid #4D4D4D;
+    border-radius: 4px;
+    &:focus {
+        outline: 0;
+    }
+}
+
+.btn {
+    padding: 11px 30px;
+    color: $white;
+    text-transform: uppercase;
+    background-color: #373737;
+    border: 2px solid #4D4D4D;
+    border-radius: 4px;
+    box-shadow: inset 0 0 4px #131313;
+    transition: .2s;
+    &:hover {
+        color: $white;
+        cursor: pointer;
+        background-color: #2F2F2F;
+    }
+    &.ninja-forms-field {
+        margin-top: 10px;
+    }
+}
+
+.gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0%, #FFF 100%);
+    content: "";
+}
+
+body {
+    margin-top: 75px;
+    -webkit-font-smoothing: antialiased;
+    background-color: #FFF;
+}
+
+section {
+    position: relative;
+}
+
+.bg {
+    &--image {
+        background-position: center;
+        background-size: cover;
+    }
+    &--dark {
+        color: $white;
+        background-color: #404040;
+        h1,
+        h2,
+        h3,
+        h4 {
+            color: $white;
+        }
+    }
+}
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    border-top: 4px solid #131313;
+    box-shadow: 0 0 15px -5px #131313;
+    &__social-bar {
+        position: relative;
+        height: 36px;
+        background: #373737;
+        background: linear-gradient(#373737 0%, #2D2D2D 100%);
+        border: 1px solid #4D4D4D;
+        border-bottom: 1px solid #131313;
+    }
+    &__nav {
+        position: relative;
+        height: 72px;
+        padding: 0 30px;
+        background-color: #404040;
+        border: 1px solid #4D4D4D;
+        border-bottom: 1px solid #131313;
+    }
+    svg {
+        height: calc(100% - 20px);
+        margin-top: 10px;
+    }
+}
+
+.menu-toggle {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    font-size: 1.8rem;
+    content: "";
+    transform: translateY(-50%);
+}
+
+.social-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: auto;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #131313;
+    li {
+        position: relative;
+        display: inline-block;
+        float: right;
+        width: 80px;
+        height: 100%;
+        margin: 0 1px;
+        color: #404040;
+        background: #373737;
+        background: linear-gradient(#373737 0%, #2D2D2D 100%);
+        border-right: 1px solid #4D4D4D;
+        border-left: 1px solid #4D4D4D;
+        &:hover {
+            cursor: pointer;
+            background: #404040;
+        }
+    }
+    .fa {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: #FFF;
+        content: "";
+        opacity: .2;
+        transform: translateX(-50%) translateY(-50%);
+    }
+}
+
+.video-con {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid #4D4D4D;
+    border-bottom: 1px solid #131313;
+    border-radius: 4px;
+    box-shadow: inset 0 0 4px #131313;
+    transition: .35s;
+    &__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 75px;
+        height: 75px;
+        color: #2F2F2F;
+        text-align: center;
+        background-color: #FFF;
+        border-radius: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        transition: .35s;
+        &:hover {
+            cursor: pointer;
+            transform: translateY(-50%) translateX(-50%) scale(1.1);
+            box-shadow: 0 0 20px $brand-primary;
+            &::before {
+                width: 130%;
+                height: 130%;
+            }
+            &::after {
+                border-left: 30px solid $brand-primary;
+            }
+        }
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 9;
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 30px solid #404040;
+            content: "";
+            transform: translateY(-50%) translateX(-38%);
+            transition: .35s;
+        }
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            border: 1px solid fade-out(#FFF, .4);
+            border-radius: 50%;
+            content: "";
+            transform: translateY(-50%) translateX(-50%);
+            transition: .35s;
+        }
+    }
+}
+
+.pricing-cards {
+    display: flex;
+    flex-direction: row;
+}
+.pricing-card {
+    padding: 4rem 0;
+    color: #FFF;
+    text-align: center;
+    background: linear-gradient(to top, darken(#4ABED7, 10%), #4ABED7);
+    flex-grow: 1;
+    &:first-child {
+        background: linear-gradient(to top, darken(#A24AD6, 05%), #A24AD6);
+        .currency,
+        .duration {
+            color: darken(#A24AD6, 15%);
+        }
+    }
+    &:last-child {
+        background: linear-gradient(to top, darken(#D77849, 10%), #D77849);
+        .currency,
+        .duration {
+            color: darken(#D77849, 15%);
+        }
+    }
+    &__header {
+        position: relative;
+    }
+    &__list {
+        ul {
+            padding: 0;
+            margin: 2rem 0;
+            list-style-type: none;
+        }
+        li {
+            margin: 1rem 0;
+        }
+    }
+    &__cta {
+
+    }
+    .price {
+        position: relative;
+        display: inline-block;
+        margin: 0 auto;
+    }
+    .currency,
+    .duration {
+        font-size: 1rem;
+        font-weight: 700;
+        color: darken(#4ABED7, 15%);
+    }
+    .currency {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        transform: translateX(-100%);
+    }
+    .duration {
+        position: absolute;
+        right: 0;
+        bottom: 5px;
+        transform: translateX(100%);
+    }
+    .value {
+        padding: 0 5px;
+        font-size: 4.5rem;
+        font-weight: 200;
+        line-height: 1;
+    }
+}
+
+.signup {
+    position: relative;
+    width: 500px;
+    height: 48px;
+    margin: 0 auto;
+    form {
+        height: 100%;
+    }
+    &__email {
+        width: 100%;
+        height: 100%;
+        padding: 0 20px;
+        color: $white;
+        text-transform: uppercase;
+        background-color: #4D4D4D;
+        border: 1px solid #4D4D4D;
+        border-radius: 4px;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &__submit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 9;
+        height: 100%;
+        padding: 11px 30px;
+        color: $white;
+        text-transform: uppercase;
+        background-color: #373737;
+        border: 2px solid #4D4D4D;
+        border-radius: 4px;
+        box-shadow: inset 0 0 4px #131313;
+        transition: .2s;
+        &:hover {
+            cursor: pointer;
+            background-color: #2F2F2F;
+        }
+    }
+}
+
+.site-footer {
+    padding: .875rem 30px;
+    font-size: .875rem;
+    font-weight: 600;
+    color: #4D4D4D;
+    text-transform: uppercase;
+    background: #373737;
+    background: linear-gradient(#373737 0%, #2D2D2D 100%);
+    border: 1px solid #4D4D4D;
+    border-bottom: 1px solid #131313;
+}
+
+.nf-form-wrap {
+    .nf-field-container {
+        margin-bottom: 30px;
+    }
+    .ninja-forms-field {
+        border: 1px solid transparent;
+    }
+    .nf-form-fields-required {
+        display: none;
+    }
+    .ninja-forms-req-symbol,
+    .nf-error-msg {
+        color: $brand-primary;
+    }
+    .nf-error .ninja-forms-field {
+        border: 1px solid $brand-primary;
+    }
+    .nf-after-field {
+        position: absolute;
+        bottom: -25px;
+        left: 0;
+    }
+}

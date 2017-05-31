@@ -1,0 +1,47 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<header class="site-header">
+			<div class="site-header__social-bar">
+				<ul class="social-list">
+					<li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+					<li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+					<li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+				</ul>
+			</div>
+			<div class="site-header__nav">
+				{% include 'assets/src/img/logo.svg' %}
+				<div class="menu-toggle">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</div>
+			</div>
+		</header>
+
+		<main class="site-main">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+      		<section class="primary-content">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+      		</section>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</main>
+
+		{% block footer %}
+			<footer class="site-footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

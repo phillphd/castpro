@@ -1,0 +1,9 @@
+{
+  "name": "Launchframe",
+  "version": "4.1.0",
+  "dependencies": {
+    "bootstrap": ">=4.0.0-alpha.4",
+    "components-font-awesome": "^4.7.0",
+    "slick-carousel": "^1.6.0"
+  }
+}
